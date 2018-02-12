@@ -15,7 +15,7 @@ bot.on('message', message => {
     var achar2 = fila.indexOf(message.author.id)
     if (achar2 == null ) return
     fila.splice(achar2,1)
-    },5000)
+    },3000)
 }
 
 
