@@ -17,12 +17,7 @@ bot.on('message', message => {
     fila.splice(achar2,1)
     },3000)
 }
-
-
-    if (message.content.toLocaleLowerCase().startsWith('!luii')){
-        message.channel.send('Olá, Eu ainda estou sendo programado pelo Luii, essa é a minha primeira versão.');         
- 
-        
+    
     }
 
     if (message.content.toLocaleLowerCase().startsWith('!loja')){
@@ -31,7 +26,7 @@ bot.on('message', message => {
     }
     
     if (message.content.toLocaleLowerCase().startsWith('!comandos')){
-        message.channel.send('🍞'); 
+        message.reply('Lista de Comandos!\n• !loja '); 
     
     }
 
@@ -46,8 +41,8 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!limpar")){
 }
 
 let role2 = message.guild.roles.find("name", "BotPerm");
-if(message.member.roles.has(role.id) && (message.content.toLocaleLowerCase().startsWith('!vaca'))){
-    message.channel.send('🐄'); 
+if(message.member.roles.has(role.id) && (message.content.toLocaleLowerCase().startsWith('!aviso'))){
+    message.channel.send('Teste'); 
 }
 });
 
