@@ -18,7 +18,7 @@ bot.on('message', message => {
     },3000)
 }
     
-    }
+ 
 
     if (message.content.toLocaleLowerCase().startsWith('!loja')){
         message.channel.send('Acesse nossa loja! - https://goo.gl/cKTxgV :slight_smile: '); 
