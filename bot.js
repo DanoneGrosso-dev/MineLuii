@@ -26,11 +26,11 @@ bot.on('message', message => {
     }
 
     if (message.content.toLocaleLowerCase().startsWith('!loja')){
-        message.channel.send('Acesse nossa loja! - https://goo.gl/mmN2nP :slight_smile: '); 
+        message.channel.send('Acesse nossa loja! - https://goo.gl/cKTxgV :slight_smile: '); 
     
     }
     
-    if (message.content.toLocaleLowerCase().startsWith('!pão')){
+    if (message.content.toLocaleLowerCase().startsWith('!comandos')){
         message.channel.send('🍞'); 
     
     }
