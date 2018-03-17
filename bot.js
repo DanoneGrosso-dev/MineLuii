@@ -21,7 +21,7 @@ bot.on('message', message => {
  
 
     if (message.content.toLocaleLowerCase().startsWith('!loja')){
-        message.channel.send('Loja indisponivel nesse momento, se deseja 1 conta chame o luii no pv '); 
+        message.channel.send('Loja indisponivel nesse momento, se deseja uma conta chame o luii no pv '); 
     
     }
     
