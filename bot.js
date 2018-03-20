@@ -49,3 +49,7 @@ if(message.member.roles.has(role.id) && (message.content.toLocaleLowerCase().sta
 bot.on('guildMemberAdd', member => {
     bot.guilds.get(member.guild.id).members.get(member.id).sendMessage(`Bem-vindo ${member} ao ${member.guild.name}`);
 })
+
+bot.on('ready', () => {
+    bot.user.setActivity('Deseja comprar minecraft ? Chame o Gustavoluii no Privado!!!', {type: 'WATCHING'});
+}); 
