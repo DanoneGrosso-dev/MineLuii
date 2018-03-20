@@ -51,5 +51,5 @@ bot.on('guildMemberAdd', member => {
 })
 
 bot.on('ready', () => {
-    bot.user.setActivity('Deseja comprar minecraft ? Chame o Gustavoluii no Privado!!!', {type: 'PLAYING'});
+    bot.user.setActivity('MINECRAFT ORIGINAL POR R$24,99 | DESEJA COMPRAR ? CHAME O GUSTAVOLUII !!!', {type: 'PLAYING'});
 }); 
