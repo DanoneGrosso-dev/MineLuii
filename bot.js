@@ -20,25 +20,12 @@ bot.on('message', message => {
     
  
 
-    if (message.content.toLocaleLowerCase().startsWith('!loja')){
-        message.channel.send('Loja indisponivel nesse momento, se deseja uma conta chame o luii no pv '); 
-    
-    }
     
     if (message.content.toLocaleLowerCase().startsWith('!comandos')){
         message.reply('Lista de Comandos!\n• !loja '); 
     
     }
 
-
-let role = message.guild.roles.find("name", "BotPerm");
-if(message.member.roles.has(role.id) && message.content.startsWith("!limpar")){
-  msgDel = 100;
-  let numberMessages = parseInt(msgDel);
-  message.channel.fetchMessages({limit: numberMessages}).then(messages => message.channel.bulkDelete(messages));
-  message.channel.send('Chat limpo!');
-
-}
 
 let role2 = message.guild.roles.find("name", "BotPerm");
 if(message.member.roles.has(role.id) && (message.content.toLocaleLowerCase().startsWith('!aviso'))){
