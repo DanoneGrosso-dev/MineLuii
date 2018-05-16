@@ -40,7 +40,7 @@ console.log("argv: "+argv+", argv[1]: "+argv[1]+"");
 
 
 switch(argv[0].toLowerCase()) {
-    case "lula":
+    case "loja":
         var embedd = new Discord.RichEmbed()
         .setAuthor("Compre Minecraft por R$29,99!!!", "https://i.imgur.com/YV3rAwM.png")
         .setTitle(`Clique aqui para acessar a loja! :dollar:`)
