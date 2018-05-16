@@ -1,16 +1,61 @@
+var fila = []
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const PREFIX = "!";
 
+var name;
+var usrAuth = 0;
 
 bot.login(process.env.BOT_TOKEN);
 
-bot.on('message', message => {
-    
+bot.on("ready", function() {
 
-bot.on('guildMemberAdd', member => {
-    bot.guilds.get(member.guild.id).members.get(member.id).sendMessage(`Bem-vindo ${member} ao ${member.guild.name}`);
-})
+    console.log("ready");
+});
+
+bot.on('message', function (message) {
+
+    var achar = fila.indexOf(message.author.id)
+    if (achar >= 0 ) return
+    else if (0 >= achar){
+    fila.push(message.author.id)
+    setTimeout(() =>{
+    var achar2 = fila.indexOf(message.author.id)
+    if (achar2 == null ) return
+    fila.splice(achar2,1)
+    },3000)
+}
+
+    console.log(message.content);
+
+    if ( message.author.equals(bot.user)) 
+    return;
+
+
+if( !message.content.startsWith(PREFIX))
+    return;
+
+var argv = message.content.substr(PREFIX.length).split(" ");
+console.log("argv: "+argv+", argv[1]: "+argv[1]+"");
+
+
+switch(argv[0].toLowerCase()) {
+    case "lula":
+        var embedd = new Discord.RichEmbed()
+        .setAuthor("Compre Minecraft por R$29,99!!!", "https://i.imgur.com/YV3rAwM.png")
+        .setTitle(`Clique aqui para acessar a loja! :dollar:`)
+        .setURL("http://mpago.la/niD9")
+        .setColor("14DDDA")
+        message.channel.sendEmbed(embedd);
+
+}});
 
 bot.on('ready', () => {
-    bot.user.setActivity('MINECRAFT ORIGINAL POR R$29,99 | DESEJA COMPRAR ? CHAME O GUSTAVOLUII NO PRIVADO!!!', {type: 'PLAYING'});
+    bot.user.setActivity('!loja', {type: 'PLAYING'});
 }); 
+
+bot.on('guildMemberAdd', member => {
+    member.guild.channels.get('444673090409070592').send("Bem-Vindo " + member.user + " ao nosso servidor.");
+});
+
+
