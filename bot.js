@@ -55,7 +55,7 @@ bot.on('ready', () => {
 }); 
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('444673090409070592').send("Bem-Vindo " + member.user + " ao nosso servidor.");
+    member.guild.channels.get('444673090409070592').send("Bem-Vindo " + member.user + " ao 🏆 MinecraftBarato");
 });
 
 
