@@ -44,7 +44,7 @@ switch(argv[0].toLowerCase()) {
         var embedd = new Discord.RichEmbed()
         .setAuthor("Compre Minecraft por R$29,99!!!", "https://i.imgur.com/YV3rAwM.png")
         .setTitle(`Clique aqui para acessar a loja! :dollar:`)
-        .setURL("http://mineluii.com")
+        .setURL("https://mineluii.com")
         .setColor("14DDDA")
         message.channel.sendEmbed(embedd);
 
