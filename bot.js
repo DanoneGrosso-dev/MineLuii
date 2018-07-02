@@ -53,7 +53,7 @@ switch(argv[0].toLowerCase()) {
 
     case "membersinfo":
         var embedd = new Discord.RichEmbed()
-        .setAuthor("Quantidade de Membros:", "https://i.imgur.com/vYiImdO.jpg")
+        .setAuthor("Informações", "https://i.imgur.com/vYiImdO.jpg")
         .setColor("0080FF")
         .addField("Quantidade de membros:", message.guild.memberCount)
         message.channel.sendEmbed(embedd);
