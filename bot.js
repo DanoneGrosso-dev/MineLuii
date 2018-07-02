@@ -74,7 +74,7 @@ bot.on('guildMemberAdd', member => {
 })
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('412658960651386910').send("Bem-Vindo "+ member.user +" a :trophy: MineLuii\n\nChats Importantes em nosso Discord :wink:\n\n #💸produtos - Chat de Produtos.\n #📜dúvidas - Chat de Dúvidas.\n #📝avisos - Chat de Avisos.\n #👥referências - Opinião de Clientes.\n #testes");
+    member.guild.channels.get('412658960651386910').send("Bem-Vindo "+ member.user +" a :trophy: MineLuii\n\nChats Importantes em nosso Discord :wink:\n\n <#409490794551181314> - Chat de Produtos.\n <#432318076734930944> - Chat de Dúvidas.\n <#432893877456732172> - Chat de Avisos.\n <#422075213677723661> - Opinião de Clientes.\n #testes");
 });
 
 bot.on("message", async message => {
