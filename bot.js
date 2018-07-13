@@ -44,7 +44,7 @@ console.log("argv: "+argv+", argv[1]: "+argv[1]+"");
 switch(argv[0].toLowerCase()) {
     case "loja":
         var embedd = new Discord.RichEmbed()
-        .setAuthor("MineLuii - Loja", "https://i.imgur.com/vYiImdO.jpg")
+        .setAuthor("MineLuii - Loja", "https://i.imgur.com/tU1Rk6C.png")
         .setTitle(`Clique aqui para acessar a loja! :dollar:`)
         .setURL("https://mineluii.com/")
         .setColor("14DDDA")
@@ -53,7 +53,7 @@ switch(argv[0].toLowerCase()) {
 
     case "membersinfo":
         var embedd = new Discord.RichEmbed()
-        .setAuthor("Informações", "https://i.imgur.com/vYiImdO.jpg")
+        .setAuthor("Quantidade de Membros:", "https://i.imgur.com/tU1Rk6C.png")
         .setColor("0080FF")
         .addField("Quantidade de membros:", message.guild.memberCount)
         message.channel.sendEmbed(embedd);
@@ -74,7 +74,7 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('444673090409070592').send("Bem-Vindo "+ member.user +" a :trophy: MineLuii\n\n`Chats Importantes em nosso Discord` :wink:\n\n <#409490794551181314> - Chat de Produtos.\n <#432318076734930944> - Chat de Dúvidas.\n <#432893877456732172> - Chat de Avisos.\n <#422075213677723661> - Opinião de Clientes.");
+    member.guild.channels.get('461688072082554880').send("Bem-Vindo " + member.user + " à :trophy: MineLuii\n\n`Chats Importantes em nosso Discord` :wink:\n\n#produtos - Chat de Produtos.\n#📜dúvidas - Chat de Dúvidas.\n#📝avisos - Chat de Avisos.\n#👥referências - Opinião de Clientes.");
 });
 
 bot.on("message", async message => {
@@ -90,8 +90,8 @@ bot.on("message", async message => {
    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
    if(!bUser) return message.channel.send("Membro não encontrado no banco de dados.");
    let bReason = args.join(" ").slice(22);
-   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
-   if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Essa pessoa não pode ser banida.");
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ | Você não tem permissão!");
+   if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ | Essa pessoa não pode ser banida.");
 
    let banEmbed = new Discord.RichEmbed()
    .setDescription("Banimento:")
@@ -107,6 +107,7 @@ bot.on("message", async message => {
 
    message.guild.member(bUser).ban(bReason);
    incidentchannel.send(banEmbed);
+   message.channel.send("⚠ | Membro Banido!");
 
 
    return;
@@ -118,11 +119,11 @@ bot.on("message", async message => {
   let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!kUser) return message.channel.send("Membro não encontrado no banco de dados.");
   let kReason = args.join(" ").slice(22);
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
-  if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Essa pessoa não pode ser expulsa.");
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ | Você não tem permissão!");
+  if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ | Essa pessoa não pode ser expulsa.");
 
   let kickEmbed = new Discord.RichEmbed()
-  .setDescription("Expulsar:")
+  .setDescription("Expulso:")
   .setColor("#e56b00")
   .addField("Membro Expulso", `${kUser} ID ${kUser.id}`)
   .addField("Expulso por", `<@${message.author.id}> ID ${message.author.id}`)
@@ -135,6 +136,7 @@ bot.on("message", async message => {
 
   message.guild.member(kUser).kick(kReason);
   kickChannel.send(kickEmbed);
+  message.channel.send("⚠ | Membro Expulso!");
 
   return;
 }
@@ -188,3 +190,4 @@ message.channel.bulkDelete(args[0]).then(() => {
 
 
 });
+
