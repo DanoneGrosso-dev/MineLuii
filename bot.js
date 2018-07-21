@@ -191,3 +191,23 @@ message.channel.bulkDelete(args[0]).then(() => {
 
 });
 
+bot.on('message', message => {
+    
+let command = message.content.split(" ")[0];
+command = command.slice(PREFIX.length);
+
+let args = message.content.split(" ").slice(1);
+
+if (command === 'ping') {
+    message.channel.send(`:exclamation:| Meu ping está ${Date.now() - message.createdTimestamp} ms.`)
+}
+
+if (command === 'say') {
+
+if(!message.member.hasPermission("ADMINISTRATOR")) return;
+const sayMessage = args.join(" ");
+message.delete().catch();
+message.channel.send(sayMessage);
+
+}})
+
