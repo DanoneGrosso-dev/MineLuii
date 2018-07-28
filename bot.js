@@ -153,6 +153,7 @@ if(cmd === `!setarcargo`){
 
   if(rMember.roles.has(gRole.id)) return message.reply("Esse membro já possui esse cargo.");
   await(rMember.addRole(gRole.id));
+  message.channel.send(":white_check_mark:  | Cargo setado!");
 
   try{
     await rMember.send("Parabéns, agora você possui o cargo `" + gRole.name +"` em nosso Discord.")
