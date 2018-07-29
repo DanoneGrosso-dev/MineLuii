@@ -59,7 +59,6 @@ switch(argv[0].toLowerCase()) {
         message.channel.sendEmbed(embedd);
           break;
 
-
 }});
 
 
@@ -74,7 +73,7 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('444673090409070592').send(".Bem-Vindo "+ member.user +" à :trophy: MineLuii\n\n`Chats Importantes em nosso Discord` :wink:\n\n<#432893877456732172> - Chat de Produtos.\n<#432318076734930944> - Chat de Dúvidas.\n<#409490794551181314> - Chat de Avisos.\n<#422075213677723661> - Opinião de Clientes.');
+    member.guild.channels.get('444673090409070592').send("Bem-Vindo " + member.user + " à :trophy: MineLuii\n\n`Chats Importantes em nosso Discord` :wink:\n\n<#432893877456732172> - Chat de Produtos.\n<#432318076734930944> - Chat de Dúvidas.\n<#409490794551181314> - Chat de Avisos.\n<#422075213677723661> - Opinião de Clientes.");
 });
 
 bot.on("message", async message => {
@@ -96,10 +95,11 @@ bot.on("message", async message => {
    let banEmbed = new Discord.RichEmbed()
    .setDescription("Banimento:")
    .setColor("#bc0000")
+   .setImage("https://i.imgur.com/VNY0oqd.gif")
    .addField("Membro Banido", `${bUser} ID ${bUser.id}`)
    .addField("Banido por", `<@${message.author.id}> ID ${message.author.id}`)
    .addField("Banido no chat", message.channel)
-   .addField("Data e Hora", message.createdAt)
+   //.addField("Data e Hora", message.createdAt)
    .addField("Motivo", bReason);
 
    let incidentchannel = message.guild.channels.find(`name`, "punições");
@@ -173,6 +173,7 @@ if(cmd === `!removercargo`){
   if(!role) return message.reply("Especifique um cargo!");
   let gRole = message.guild.roles.find(`name`, role);
   if(!gRole) return message.reply("Cargo não encontrado.");
+  message.channel.send(":white_check_mark:  | Cargo removido!");
 
   if(!rMember.roles.has(gRole.id)) return message.reply("Esse membro não possui nenhum cargo.");
   await(rMember.removeRole(gRole.id));
@@ -194,21 +195,16 @@ message.channel.bulkDelete(args[0]).then(() => {
 
 bot.on('message', message => {
     
-let command = message.content.split(" ")[0];
-command = command.slice(PREFIX.length);
+  let command = message.content.split(" ")[0];
+  command = command.slice(PREFIX.length);
+  let args = message.content.split(" ").slice(1);
+  if (command === 'ping') {
+      message.channel.send(`:exclamation:| Meu ping está ${Date.now() - message.createdTimestamp} ms.`)
+  }
+  if (command === 'say') {
+  if(!message.member.hasPermission("ADMINISTRATOR")) return;
+  const sayMessage = args.join(" ");
+  message.delete().catch();
+  message.channel.send(sayMessage);
 
-let args = message.content.split(" ").slice(1);
-
-if (command === 'ping') {
-    message.channel.send(`:exclamation:| Meu ping está ${Date.now() - message.createdTimestamp} ms.`)
-}
-
-if (command === 'say') {
-
-if(!message.member.hasPermission("ADMINISTRATOR")) return;
-const sayMessage = args.join(" ");
-message.delete().catch();
-message.channel.send(sayMessage);
-
-}})
-
+  }})
