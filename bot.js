@@ -69,12 +69,12 @@ bot.on('ready', () => {
 
 
 bot.on('guildMemberAdd', member => {
-    bot.guilds.get(member.guild.id).members.get(member.id).sendMessage("Bem-Vindo " + member + " à :trophy: MineLuii\n\n`Conheça nossos produtos abaixo:`\n\n• Minecraft Unmigrated FULL ACESSO - :moneybag: R$29,99\n• Minecraft Original Alternativo 4 Contas - :moneybag: R$9,99\n• Capa da Optifine - :moneybag: Em Breve\n• Regedit OP + DNS - :moneybag: R$39,99\n\nhttps://discord.gg/BcnX29f");
+    bot.guilds.get(member.guild.id).members.get(member.id).sendMessage("Bem-Vindo " + member + " à :trophy: MineLuii\n\n`Conheça nossos produtos abaixo:`\n\n• Minecraft Unmigrated FULL ACESSO - :moneybag: R$24,99\n• Minecraft Original Alternativo 4 Contas - :moneybag: R$9,99\n• Capa da Optifine - :moneybag: R$29,99\n• Regedit OP + DNS - :moneybag: R$29,99\n\nhttps://discord.gg/BcnX29f");
 
 });
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('444673090409070592').send('Bem-Vindo '+ member.user +' à :trophy: MineLuii\n\n`Chats Importantes em nosso Discord` :wink:\n\n<#432893877456732172> - Chat de Produtos.\n<#432318076734930944> - Chat de Dúvidas.\n<#409490794551181314> - Chat de Avisos.\n<#422075213677723661> - Opinião de Clientes.');
+    member.guild.channels.get('444673090409070592').send("Bem-Vindo "+ member.user +" à :trophy: MineLuii\n\n`Chats Importantes em nosso Discord` :wink:\n\n<@432893877456732172> - Chat de Produtos.\n<@432318076734930944> - Chat de Dúvidas.\n<@409490794551181314> - Chat de Avisos.\n<@422075213677723661> - Opinião de Clientes.');
 });
 
 bot.on("message", async message => {
