@@ -87,7 +87,7 @@ bot.on("message", async message => {
   if(cmd === `!ban`){
 
    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-   if(!bUser) return message.channel.send("Membro não encontrado no banco de dados.");
+   if(!bUser) return message.channel.send("Membro não encontrado.");
    let bReason = args.join(" ").slice(22);
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ | Você não tem permissão!");
    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ | Essa pessoa não pode ser banida.");
@@ -117,7 +117,7 @@ bot.on("message", async message => {
 
 
   let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!kUser) return message.channel.send("Membro não encontrado no banco de dados.");
+  if(!kUser) return message.channel.send("Membro não encontrado.");
   let kReason = args.join(" ").slice(22);
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ | Você não tem permissão!");
   if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ | Essa pessoa não pode ser expulsa.");
