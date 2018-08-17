@@ -84,7 +84,7 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-    if(cmd === `!mute`){
+  if(cmd === `!mute`){
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("❌ | Você não tem permissão!")
     
     let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
@@ -116,7 +116,7 @@ bot.on("message", async message => {
   
     return;
 }
-    
+
   if(cmd === `!ban`){
 
    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
