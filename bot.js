@@ -84,7 +84,7 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
     
-        if(cmd === "skin"){
+        if(cmd === "!skin"){
         let reason = args.slice(0).join(' ');
         if (reason.length < 1) return message.reply('Cite um nick de minecraft.');
         
