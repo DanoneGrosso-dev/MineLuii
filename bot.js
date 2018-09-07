@@ -90,10 +90,11 @@ bot.on("message", async message => {
         
         let embed = new Discord.RichEmbed()
       
-        .setTitle(`<a:cubo:487605799292633089> ${args[0]}`)
+        .setTitle(`<a:cubo:487622863583576075> ${args[0]}`)
         .setImage(`https://mc-heads.net/body/${args[0]}`)
         .setFooter(message.author.tag,message.author.avatarURL )
         .setTimestamp(new Date())
+        .setColor("14DDDA")
         message.channel.send(embed)
       };
     
