@@ -84,6 +84,19 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
     
+        if(cmd === "skin"){
+        let reason = args.slice(0).join(' ');
+        if (reason.length < 1) return message.reply('Cite um nick de minecraft.');
+        
+        let embed = new Discord.RichEmbed()
+      
+        .setTitle(`<a:cubo:487605799292633089> ${args[0]}`)
+        .setImage(`https://mc-heads.net/body/${args[0]}`)
+        .setFooter(message.author.tag,message.author.avatarURL )
+        .setTimestamp(new Date())
+        message.channel.send(embed)
+      };
+    
     if(cmd === `!mute`){
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("❌ | Você não tem permissão!")
     
