@@ -203,7 +203,7 @@ if(cmd === `!setarcargo`){
   message.channel.send(":white_check_mark:  | Cargo setado!");
 
   try{
-    await rMember.send("Parabéns, agora você possui o cargo `" + gRole.name +"` em nosso Discord.")
+    await rMember.send("Parabéns, agora você possui o cargo `" + gRole.name +"` em nosso Discord.\n\nAgora você pode deixar sua opinião de compra no canal #referências")
   }catch(e){
     message.channel.send(`Parabéns <@${rMember.id}>, agora você possui o cargo ${gRole.name}. em nosso Discord.`)
   }
