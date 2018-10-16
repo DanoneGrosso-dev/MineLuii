@@ -68,7 +68,7 @@ bot.on('ready', () => {
 
 
 bot.on('guildMemberAdd', member => {
-    bot.guilds.get(member.guild.id).members.get(member.id).sendMessage("Bem-Vindo " + member + " à :trophy: MineLuii\n\n`Conheça nossos produtos abaixo:`\n\n• Minecraft Unmigrated FULL ACESSO - :moneybag: R$24,99\n• Minecraft Original Alternativo 4 Contas - :moneybag: R$9,99\n• Capa da Optifine - :moneybag: R$29,99\n• Regedit OP + DNS - :moneybag: R$29,99\n\nhttps://discord.gg/BcnX29f");
+    bot.guilds.get(member.guild.id).members.get(member.id).sendMessage("Bem-Vindo " + member + " à :trophy: MineLuii\n\n`Conheça nossos produtos abaixo:`\n\n• Minecraft Unmigrated FULL ACESSO - :moneybag: R$19,90\n• Minecraft Original Alternativo 3 Contas - :moneybag: R$1,99\n• Capa da Optifine - :moneybag: R$29,99\n• Regedit OP + DNS - :moneybag: R$29,99\n\nhttps://discord.gg/BcnX29f");
 
 });
 
